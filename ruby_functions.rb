@@ -31,7 +31,7 @@ end
 add_phrase("i am stupid rich!")
 
 #Second function
-=begin
+
 my_array = [3, 10, 1, 44, 2]
 def array_max(aaray)
   sorted = aaray.sort
@@ -41,25 +41,45 @@ end
 
 array_max(my_array)
 
-#third function
-def make_model(ar1, ar2)
-  my_hash = ar1.zip(ar2)
+puts "first max try"
+#--second try with max number thats should be 48
+my_array = [3, 10, 1, 48, 2]
+def loop_max(aaray)
+  max_numm = 0
+  for i in 0..(aaray.length - 1)
+    if (aaray[i] > max_numm)
+       max_numm = aaray[i]
+    end
   end
-  }
+  puts max_numm
+end
+puts "second max num with loop"
+loop_max(my_array)
 
-ar1 = [:toyota, :tesla]
-ar2 = ["Prius", "Model S"]
-make_model(ar1,ar2)
+#third function
+def make_model(ar1, ar2)  #takes 2 arrays as argument
+  my_hash = {}            #make a new hash to pass the arrays into
 
-keys = %w(name description country)
->> values = ["Dr Nic", "Good lookin'", "Netherlands"]
->> [keys, values].transpose
-=> [["name", "Dr Nic"], ["description", "Good lookin'"], ["country", "Netherlands"]]
->> hash = Hash[*[keys, values].transpose.flatten]
-=> {"name"=>"Dr Nic", "country"=>"Netherlands", "description"=>"Good lookin'"}
+  #take the array size to see how many times to loop
+  #each loop keys i of first arrary to same i oof second array
+  ar1.size.times { |i| my_hash[ar1[i]] = ar2[i]}  
+  my_hash
+ end
+
+ar1 = [:toyota, :tesla, :ford, :honda ]
+ar2 = ["Prius", "Model S", "Bronco", "Civic"]
+
+#print out new hash to see if it works
+puts make_model(ar1,ar2)
+
+
+=begin use this code to solve third function
+def Hash.from_pairs(keys,values)
+  hash = {}
+  keys.size.times { |i| hash[ keys[i] ] = values[i] }
+  hash
+end
 =end
-
-
 #fizzbuzz
 
 
@@ -72,4 +92,5 @@ for i in 1..100
     puts "Buzz"
   else 
     puts i
-     
+  end 
+end    
