@@ -42,19 +42,21 @@ end
 array_max(my_array)
 
 puts "first max try"
-#--second try with max number thats should be 48
-my_array = [3, 10, 1, 48, 2]
+
+#--second try with max number thats should be 552
+my_array = [3, 10, -11, 48, 0, 552, 1]
 def loop_max(aaray)
-  max_numm = 0
+  max_numm = aaray[0]
   for i in 0..(aaray.length - 1)
-    if (aaray[i] > max_numm)
+    if (aaray[i] >= max_numm)
        max_numm = aaray[i]
     end
   end
   puts max_numm
 end
-puts "second max num with loop"
+
 loop_max(my_array)
+puts "second max num with loop"
 
 #third function
 def make_model(ar1, ar2)  #takes 2 arrays as argument
@@ -80,6 +82,7 @@ def Hash.from_pairs(keys,values)
   hash
 end
 =end
+
 #fizzbuzz
 
 def fizzBuzz (num1, num2)
