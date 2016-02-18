@@ -59,7 +59,7 @@ loop_max(my_array)
 puts "second max num with loop"
 
 #third function
-def make_model(ar1, ar2)  #takes 2 arrays as argument
+def make_models(ar1, ar2)  #takes 2 arrays as argument
   my_hash = {}            #make a new hash to pass the arrays into
 
   #take the array size to see how many times to loop
@@ -72,13 +72,44 @@ ar1 = [:toyota, :tesla, :ford, :honda ]
 ar2 = ["Prius", "Model S", "Bronco", "Civic"]
 
 #print out new hash to see if it works
-puts make_model(ar1,ar2)
+puts make_models(ar1,ar2)
 
+ # Create a function that takes two arguments - both of them arrays. Inside of the function, combine the arrays using the items from the first array as keys and the second array as values. For example, when these two arrays are supplied as arguments:
+    # [:toyota, :tesla]
+    # ["Prius", "Model S"]  
+    # they should return a hash like so:
+    # {toyota: "Prius", tesla: "Model S"}
+
+     ##def make_model(ar1, ar2)
+       
+       ## to_h → 
+       ##  Returns the result of interpreting ary as an array of [key, value] pairs.
+       ##  [[:foo, :bar], [1, 2]].to_h
+       ##   # => {:foo => :bar, 1 => 2}
+       ## [[ar1], [ar2]].to_h
+
+       ##zip Converts any arguments to arrays, 
+       ##   then merges elements of self with corresponding 
+       ##   elements from each argument.
+
+       ##     a = [ 4, 5, 6 ]
+       ## ##      b = [ 7, 8, 9 ]
+       ##      [1, 2, 3].zip(a, b)   #=> [[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+       ##      [1, 2].zip(a, b)      #=> [[1, 4, 7], [2, 5, 8]]
+        ##      a.zip([1, 2], [8])    #=> [[4, 1, 8], [5, 2, nil], [6, nil, nil]]
+       ##  myhash = array1.zip(array2)
+       ##  Hash[myhash]
+       ##  end
+  
+      # make = [:toyota, :tesla, :ford, :Bughatti]
+       # model = ["Prius", "Model S", "Mustang", "Straight Baller Car"]
+      #puts combine_array(make, model)
 
 =begin use this code to solve third function
 def Hash.from_pairs(keys,values)
-  hash = {}
-  keys.size.times { |i| hash[ keys[i] ] = values[i] }
+  hash = {}                                           --declare new hash
+  keys.size.times { |i| hash[ keys[i] ] = values[i] } --size of  array 
+                                                        for each element add corresponding
   hash
 end
 =end
